@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/traitlets/traitlets.py", line 528, in get
+    value = obj._trait_values[self.name]
+KeyError: 'allow_remote_access'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/notebook/notebookapp.py", line 864, in _default_allow_remote
+    addr = ipaddress.ip_address(self.ip)
+  File "/usr/local/lib/python3.7/ipaddress.py", line 54, in ip_address
+    address)
+ValueError: '' does not appear to be an IPv4 or IPv6 address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/jupyter-notebook", line 11, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.7/site-packages/jupyter_core/application.py", line 266, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/traitlets/config/application.py", line 657, in launch_instance
+    app.initialize(argv)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-7>", line 2, in initialize
+  File "/usr/local/lib/python3.7/site-packages/traitlets/config/application.py", line 87, in catch_config_error
+    return method(app, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/notebook/notebookapp.py", line 1628, in initialize
+    self.init_webapp()
+  File "/usr/local/lib/python3.7/site-packages/notebook/notebookapp.py", line 1378, in init_webapp
+    self.jinja_environment_options,
+  File "/usr/local/lib/python3.7/site-packages/notebook/notebookapp.py", line 159, in __init__
+    default_url, settings_overrides, jinja_env_options)
+  File "/usr/local/lib/python3.7/site-packages/notebook/notebookapp.py", line 252, in init_settings
+    allow_remote_access=jupyter_app.allow_remote_access,
+  File "/usr/local/lib/python3.7/site-packages/traitlets/traitlets.py", line 556, in __get__
+    return self.get(obj, cls)
+  File "/usr/local/lib/python3.7/site-packages/traitlets/traitlets.py", line 535, in get
+    value = self._validate(obj, dynamic_default())
+  File "/usr/local/lib/python3.7/site-packages/notebook/notebookapp.py", line 867, in _default_allow_remote
+    for info in socket.getaddrinfo(self.ip, self.port, 0, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.7/socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+[W 18:41:05.686 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 18:41:05.691 NotebookApp] Serving notebooks from local directory: /home/notebooks/note
+[I 18:41:05.691 NotebookApp] The Jupyter Notebook is running at:
+[I 18:41:05.691 NotebookApp] http://(iZbp1hytrli05s35nmwpnyZ or 127.0.0.1):8888/
+[I 18:41:05.691 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 18:41:23.668 NotebookApp] 302 GET / (112.10.94.43) 0.62ms
+[I 18:41:44.875 NotebookApp] 302 GET / (112.10.94.43) 0.55ms
+[W 18:51:42.590 NotebookApp] 404 POST /api/contents/%25E6%25B5%258B%25E8%25AF%2595%25E7%259B%25B8%25E5%2585%25B3%25E9%2597%25AE%25E9%25A2%2598 (112.10.94.43): No such directory: /%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98
+[W 18:51:42.591 NotebookApp] No such directory: /%%E6%%B5%%8B%%E8%%AF%%95%%E7%%9B%%B8%%E5%%85%%B3%%E9%%97%%AE%%E9%%A2%%98
+[W 18:51:42.591 NotebookApp] 404 POST /api/contents/%25E6%25B5%258B%25E8%25AF%2595%25E7%259B%25B8%25E5%2585%25B3%25E9%2597%25AE%25E9%25A2%2598 (112.10.94.43) 1.61ms referer=http://huhangkai.com:8888/tree/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98
+[I 18:52:00.506 NotebookApp] Creating new file in 
